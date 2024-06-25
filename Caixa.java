@@ -45,18 +45,19 @@ public class Caixa{
         return adjacentes;
     }
 
-    private void adicionaAresta(Caixa a){
-        Aresta aresta = new Aresta(this, a);
+    private void adicionaAresta(Caixa destino) {
+        Aresta aresta = new Aresta(this, destino);
         adjacentes.add(aresta);
     }
 
-    public boolean ligaCaixa(Caixa c){
-        if(encaixa(c) == true){
-            adicionaAresta(this);
-            return true; 
-        } else return false;
+    public boolean ligaCaixa(Caixa c) {
+        if (encaixa(c)) {
+            adicionaAresta(c);
+            return true;
+        } else {
+            return false;
+        }
     }
-
     private boolean encaixa(Caixa c){
         if(c.getAltura() < this.altura && c.getComprimento() < this.getComprimento() && c.getLargura() < this.largura){
             return true;

@@ -2,12 +2,10 @@ public class Aresta{
 
     private Caixa origem;
     private Caixa destino;
-    private final int peso;
 
     public Aresta(Caixa a, Caixa b){
         this.origem = a;
         this.destino = b;
-        this.peso = 1;
 
     }
 
