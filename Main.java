@@ -11,15 +11,17 @@ public class Main {
         Caixa a = new Caixa(v);
         Caixa b = new Caixa(vv);
 
-        a.adicionaAresta(b);
-        b.adicionaAresta(a);
+        System.out.println(a.ligaCaixa(b));
+        System.out.println(b.ligaCaixa(a));
+        
 
         List<Caixa> caixas = new ArrayList<>();
         caixas.add(a);
         caixas.add(b);
         
         Grafo g = new Grafo(2, caixas);
-        g.passaAdjacentes(caixas);
+        g.adicionaCaixa(a);
+        g.adicionaCaixa(b);
         System.out.println(g.getTodasAdjacentes());
     }
 }

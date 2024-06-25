@@ -22,7 +22,7 @@ public class Aresta{
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append(getOrigem()).append("==>").append(getDestino());
+        sb.append(getOrigem()).append(" ==> ").append(getDestino());
         return sb.toString();
     }
 }

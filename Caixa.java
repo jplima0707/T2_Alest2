@@ -11,7 +11,7 @@ public class Caixa{
 
     public Caixa(int []valores){
         if(valores.length > 3){
-            System.out.println("Numero de entrada invalido!");
+            throw new IllegalArgumentException("Numero de entrada invalido!");
         } else {  
         for(int i =0; i < valores.length; i++){
             for(int j = i+1;j< valores.length; j++){
@@ -41,15 +41,29 @@ public class Caixa{
         return largura;
     }
 
-    public Aresta getAdjacentes(){
-        for (Aresta a : adjacentes){
-            return a;
-        }
-        return null;
+    public List<Aresta> getAdjacentes(){
+        return adjacentes;
     }
 
-    public void adicionaAresta(Caixa a){
+    private void adicionaAresta(Caixa a){
         Aresta aresta = new Aresta(this, a);
         adjacentes.add(aresta);
+    }
+
+    public boolean ligaCaixa(Caixa c){
+        if(encaixa(c) == true){
+            adicionaAresta(this);
+            return true; 
+        } else return false;
+    }
+
+    private boolean encaixa(Caixa c){
+        if(c.getAltura() < this.altura && c.getComprimento() < this.getComprimento() && c.getLargura() < this.largura){
+            return true;
+        } else return false;
+    }
+
+    public String toString() {
+        return "Caixa [altura=" + altura + ", comprimento=" + comprimento + ", largura=" + largura + "]";
     }
 }
