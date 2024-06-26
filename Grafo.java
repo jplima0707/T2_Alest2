@@ -7,8 +7,8 @@ public class Grafo{
     private List<Caixa> listaCaixas;
     private List<List<Aresta>> todasAdjacentes;
 
-    public Grafo(int numVertices, List<Caixa> todasCaixas){
-        listaCaixas = todasCaixas;
+    public Grafo(int numVertices){
+        listaCaixas = new ArrayList<>();
         todasAdjacentes = new ArrayList<>();
         numVertices = 0;
     }

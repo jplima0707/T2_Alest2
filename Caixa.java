@@ -50,13 +50,11 @@ public class Caixa{
         adjacentes.add(aresta);
     }
 
-    public boolean ligaCaixa(Caixa c) {
+    public void ligaCaixa(Caixa c) {
         if (encaixa(c)) {
             adicionaAresta(c);
-            return true;
-        } else {
-            return false;
         }
+          
     }
     private boolean encaixa(Caixa c){
         if(c.getAltura() < this.altura && c.getComprimento() < this.getComprimento() && c.getLargura() < this.largura){
